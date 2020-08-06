@@ -13,8 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@home');
+// Route::get('/', 'HomeController@home');
 
-Route::get('/register', 'AuthController@register');
+// Route::get('/register', 'AuthController@register');
 
-Route::post('/selamat', 'AuthController@selamat');
+// Route::post('/selamat', 'AuthController@selamat');
+
+Route::get('/master', function() {
+    return view('adminlte.master');
+});
+
+Route::get('/', function (){
+    return view ('items.index');
+});
+
+Route::get('/data-table', function (){
+    return view('items.data-table');
+});
