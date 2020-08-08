@@ -14,12 +14,12 @@ class AddLikeDislikePertanyaan extends Migration
     public function up()
     {
         Schema::create('likeDislikePertanyaan', function (Blueprint $table) {
-            $table->unsignedBigInteger('pertanyaan_id');
-            $table->unsignedBigInteger('profil_id');
-            $table->integer('poin')->nullable();
-            // $table->primary(['pertanyaan_id', 'profil_id']);
-            // $table->foreign('pertanyaan_id')->reference('id')on('pertanyaan');
-            // $table->foreign('pertanyaan_id')->reference('id')on('profil');
+            $table->unsignedBigInteger('pertanyaan_id')->nullable();
+            $table->unsignedBigInteger('profil_id')->nullable();
+            
+            $table->foreign('pertanyaan_id')->references('id')->on('pertanyaan');
+            $table->foreign('profil_id')->references('id')->on('profil');
+            $table->integer('poin');
         });
     }
 

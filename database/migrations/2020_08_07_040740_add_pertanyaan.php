@@ -18,6 +18,7 @@ class AddPertanyaan extends Migration
             $table->string('judul', 100);
             $table->string('isi', 255);
             $table->timestamps();
+
             });
     }
 

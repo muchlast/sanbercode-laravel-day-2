@@ -18,6 +18,8 @@ class AddProfil extends Migration
         $table->string('nama_lengkap', 100);
         $table->string('email', 45)->unique();
         $table->string('foto', 45);
+
+        
         });
     }
 
