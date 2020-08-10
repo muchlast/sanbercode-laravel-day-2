@@ -17,11 +17,7 @@ class AddKomentarJawaban extends Migration
             $table->bigIncrements('id');
             $table->string('isi', 255);
             $table->timestamps();
-            // $table->unsignedBigInteger('jawaban_id')->nullable();
-            // $table->unsignedBigInteger('profil_id')->nullable();
-
-            // $table->foreign('jawaban_id')->references('id')->on('jawaban');
-            // $table->foreign('profil_id')->references('id')->on('profil');
+           
         });
     }
 

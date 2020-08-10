@@ -17,11 +17,7 @@ class AddJawaban extends Migration
             $table->bigIncrements('id');
             $table->string('isi', 255);
             $table->timestamps();
-            // $table->unsignedBigInteger('pertanyaan_id')->nullable();
-            // $table->unsignedBigInteger('profil_id')->nullable();
-
-            // $table->foreign('pertanyaan_id')->references('id')->on('pertanyaan');
-            // $table->foreign('profil_id')->references('id')->on('profil');
+           
             });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddKomentarPertanyaan extends Migration
+class AddJawabaIdToKomentarJawaban extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class AddKomentarPertanyaan extends Migration
      */
     public function up()
     {
-        Schema::create('komentarPertanyaan', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('isi', 255);
-            $table->timestamps();
-            
+        Schema::table('komentar_jawaban', function (Blueprint $table) {
+            //
         });
     }
 
@@ -28,6 +25,8 @@ class AddKomentarPertanyaan extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('komentarPertanyaan');
+        Schema::table('komentar_jawaban', function (Blueprint $table) {
+            //
+        });
     }
 }
