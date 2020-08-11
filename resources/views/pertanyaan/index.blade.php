@@ -13,7 +13,7 @@
               {{ session ('success')}}
               </div>  
               @endif
-              <a class="btn btn-primary mb-2" href="/pertanyaan/create"> Buat Pertanyaan Baru </a>
+              <a class="btn btn-primary mb-2" href="{{ route('pertanyaan.create') }}"> Buat Pertanyaan Baru </a>
                 <table class="table table-bordered">
                   <thead>                  
                     <tr>
@@ -30,9 +30,9 @@
                         <td> {{ $pertanyaa-> judul }} </td>
                         <td> {{ $pertanyaa-> isi }} </td>
                         <td style="display: flex;">
-                            <a href="/pertanyaan/{{$pertanyaa->id}}" class="btn btn-info btn-sm">Show</a>
-                            <a href="/pertanyaan/{{$pertanyaa->id}}/edit" class="btn btn-default btn-sm">Edit</a>
-                            <form action="/pertanyaan/{{$pertanyaa->id}}" method="post">
+                            <a href="{{ route('pertanyaan.show', ['pertanyaan' => $pertanyaa->id]) }}" class="btn btn-info btn-sm">Show</a>
+                            <a href="{{ route('pertanyaan.edit', ['pertanyaan' => $pertanyaa->id]) }}" class="btn btn-default btn-sm">Edit</a>
+                            <form action="{{ route('pertanyaan.destroy', ['pertanyaan' => $pertanyaa->id]) }}" method="post">
                             @csrf
                             @method('DELETE')
                             <input type="submit" value="delete" class="btn btn-danger btn-sm">

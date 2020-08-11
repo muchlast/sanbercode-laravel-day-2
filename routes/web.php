@@ -19,22 +19,25 @@ use Illuminate\Support\Facades\Route;
 
 // Route::post('/selamat', 'AuthController@selamat');
 
-Route::get('/master', function() {
-    return view('adminlte.master');
-});
+// Route::get('/master', function() {
+//     return view('adminlte.master');
+// });
 
 Route::get('/', function (){
-    return view ('items.index');
+    return view ('welcome');
 });
 
-Route::get('/data-table', function (){
-    return view('items.data-table');
-});
+// Route::get('/data-table', function (){
+//     return view('items.data-table');
+// });
 
-Route::get('/pertanyaan/create', 'PertanyaanController@create');
-Route::post('/pertanyaan', 'PertanyaanController@store'); 
-Route::get('/pertanyaan', 'PertanyaanController@index');
-Route::get('/pertanyaan/{id}', 'PertanyaanController@show');
-Route::get('/pertanyaan/{id}/edit', 'PertanyaanController@edit');
-Route::put('/pertanyaan/{id}', 'PertanyaanController@update');
-Route::delete('/pertanyaan/{id}', 'PertanyaanController@destroy');
+// Route::get('/pertanyaan/create', 'PertanyaanController@create');
+// Route::post('/pertanyaan', 'PertanyaanController@store')->name('post.index'); 
+// Route::get('/pertanyaan', 'PertanyaanController@index');
+// Route::get('/pertanyaan/{id}', 'PertanyaanController@show');
+// Route::get('/pertanyaan/{id}/edit', 'PertanyaanController@edit');
+// Route::put('/pertanyaan/{id}', 'PertanyaanController@update');
+// Route::delete('/pertanyaan/{id}', 'PertanyaanController@destroy');
+
+
+Route::resource('pertanyaan', 'PertanyaaController');
