@@ -41,3 +41,6 @@ Route::get('/', function (){
 
 
 Route::resource('pertanyaan', 'PertanyaaController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

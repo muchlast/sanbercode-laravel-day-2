@@ -8,6 +8,7 @@ use App\Pertanyaa;
 
 class PertanyaanController extends Controller
 {
+
     public function create(){
     return view('pertanyaan.create');
     }

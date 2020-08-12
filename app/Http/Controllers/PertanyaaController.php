@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pertanyaa;
-
+use DB;
+use Auth;
 
 class PertanyaaController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth')->except(['index']);
+        }
     /**
      * Display a listing of the resource.
      *
@@ -73,7 +77,7 @@ class PertanyaaController extends Controller
     {
          // $pertanyaa = DB::table('pertanyaan')->where('id', $id)->first();
         // dd($pertanyaa);
-        $pertanyaan = Pertanyaa::find($id);
+        $pertanyaa = Pertanyaa::find($id);
 
         return view('pertanyaan.show', compact('pertanyaa'));
     }
